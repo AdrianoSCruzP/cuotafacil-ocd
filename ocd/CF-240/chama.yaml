@@ -1,0 +1,15 @@
+# Gestión del pase de CF-240 (tramo 7). Ventanas en orden y sin solaparse:
+# pase -> ratificación -> reversión. Horas en hora local del banco.
+ticket: CF-240
+chama:
+  pase:
+    inicio: "2026-12-17T22:00"
+    fin: "2026-12-17T23:00"
+  ratificacion:
+    inicio: "2026-12-17T23:00"
+    fin: "2026-12-17T23:45"
+  reversion:
+    inicio: "2026-12-17T23:45"
+    fin: "2026-12-18T01:00"
+checklists: [LT, SEGURIDAD, PO]
+conformidadesPase: [LT, CL-DEV, CL-QA, OPS]

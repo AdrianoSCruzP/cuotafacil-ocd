@@ -1,0 +1,12 @@
+{
+  "descripcion": "Jobs de cuotafacil disponibles en Jenkins, tal como los da el caso. Cada job 01.PIPELINE_ tiene su par 02.PIPELINE_..._REVERT_ en el mismo grupo y ambiente.",
+  "prefijo": "CUOTAFACIL-",
+  "jobs": [
+    { "job": "CERT/CONFIG_MAPS/01.PIPELINE_CONFIG_MAPS_CERT",   "lineasLog": 1050,  "bitbucket": true },
+    { "job": "CERT/DEPLOY/01.PIPELINE_DEPLOY_CERT",             "lineasLog": 9870,  "bitbucket": true },
+    { "job": "CERT/PERF/01.PIPELINE_PERFORMANCE_CERT",          "lineasLog": 52300, "bitbucket": true },
+    { "job": "PROD/CONFIG_MAPS/01.PIPELINE_CONFIG_MAPS_PROD",   "lineasLog": 1120,  "bitbucket": true },
+    { "job": "PROD/DEPLOY/01.PIPELINE_DEPLOY_PROD",             "lineasLog": 10240, "bitbucket": true },
+    { "job": "PROD/CACHE/01.PIPELINE_FLUSH_CACHE_PROD",         "lineasLog": 410,   "bitbucket": false }
+  ]
+}

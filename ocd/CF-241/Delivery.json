@@ -1,0 +1,12 @@
+{
+  "componente": "cuotafacil",
+  "version": "1.2.0",
+  "cert": [
+    { "job":    "CUOTAFACIL-CERT/CONFIG_MAPS/01.PIPELINE_CONFIG_MAPS_CERT",
+      "revert": "CUOTAFACIL-CERT/CONFIG_MAPS/02.PIPELINE_CONFIG_MAPS_REVERT_CERT" }
+  ],
+  "prod": [
+    { "job":    "CUOTAFACIL-PROD/CONFIG_MAPS/01.PIPELINE_CONFIG_MAPS_PROD",
+      "revert": "CUOTAFACIL-PROD/CONFIG_MAPS/02.PIPELINE_CONFIG_MAPS_REVERT_PROD" }
+  ]
+}
