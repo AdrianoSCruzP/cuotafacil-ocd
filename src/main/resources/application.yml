@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: cuotafacil
+
+server:
+  port: 8080
+
+# Valores para correr en local. En CERT y PROD los reemplaza el config map cuotafacil-config
+# (deploy/<ambiente>/configmap.yaml), que entra al pod como variables de entorno.
+cuotafacil:
+  simulador:
+    moneda: PEN
+    tea-base: 0.2490
+    tea-preferente-haberes: 0.1990
+    monto-minimo: 1000
+    monto-maximo: 150000
+    plazo-minimo-meses: 6
+    plazo-maximo-meses: 60
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
