@@ -1,0 +1,47 @@
+# Manifiesto que aplica el job DEPLOY de cada ambiente (CUOTAFACIL-<AMB>/DEPLOY/01.PIPELINE_DEPLOY_<AMB>).
+# La imagen es un marcador: el job pone el registro real. Sin datos reales en este archivo.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cuotafacil
+  labels:
+    app: cuotafacil
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cuotafacil
+  template:
+    metadata:
+      labels:
+        app: cuotafacil
+    spec:
+      containers:
+        - name: cuotafacil
+          image: cuotafacil:1.2.0
+          ports:
+            - containerPort: 8080
+          # Las propiedades del simulador se leen al arrancar: un config map nuevo
+          # solo llega a los pods después de un reinicio (rollout restart o deploy).
+          envFrom:
+            - configMapRef:
+                name: cuotafacil-config
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8080
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cuotafacil
+spec:
+  selector:
+    app: cuotafacil
+  ports:
+    - port: 80
+      targetPort: 8080

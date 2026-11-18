@@ -1,0 +1,18 @@
+# Config map de cuotafacil. Lo aplica el job CUOTAFACIL-CERT/CONFIG_MAPS/01.PIPELINE_CONFIG_MAPS_CERT
+# y lo revierte su par 02.PIPELINE_CONFIG_MAPS_REVERT_CERT.
+# Cada clave es la variable de entorno de una propiedad cuotafacil.simulador.* (binding relajado de Spring Boot).
+# Sin datos reales: nada de servidores, usuarios ni credenciales en este archivo.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cuotafacil-config
+  labels:
+    app: cuotafacil
+data:
+  CUOTAFACIL_SIMULADOR_MONEDA: "PEN"
+  CUOTAFACIL_SIMULADOR_TEABASE: "0.2490"
+  CUOTAFACIL_SIMULADOR_TEAPREFERENTEHABERES: "0.1990"
+  CUOTAFACIL_SIMULADOR_MONTOMINIMO: "1000"
+  CUOTAFACIL_SIMULADOR_MONTOMAXIMO: "150000"
+  CUOTAFACIL_SIMULADOR_PLAZOMINIMOMESES: "6"
+  CUOTAFACIL_SIMULADOR_PLAZOMAXIMOMESES: "60"
